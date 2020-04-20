@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>rabitBata</title>
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <div id="main">
+        <div id="logo">
+            <p>RABBIT</p>
+        </div>
+        <div id="canvas-wrap">
+            <canvas id="myCanvas" width="310" height="280"></canvas>
+        </div>
+        <div id="btn-wrap">
+            <button v-on:click="rightClick" type="button" class="btn btn_move btn_move--left"></button>
+            <button v-on:click="leftClick" type="button" class="btn btn_move btn_move--right"></button>
+            <button v-on:click="jumpClick" type="button" class="btn btn_jump"></button>
+        </div>
+        <div id="output_csv"></div>
+        <footer id="footer">
+            <small>Yuma Matsuzaki</small>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
