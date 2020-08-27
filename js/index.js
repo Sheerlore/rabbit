@@ -1,15 +1,5 @@
 var step = 0;
 var jumpstep = 0;
-var word = axios.get('./data.json')
-.then(res => {
-    console.log(res)
-})
-.catch(err => {
-    console.error(err); 
-})
-console.log(word);
-
-
 var app = new Vue({
     el: '#main',
     data: {
@@ -51,31 +41,6 @@ var stand = [
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
-
-
-var result = [];
-const outputElement = document.getElementById('output_csv');
-
-function getCSV(){
-    var req = new XMLHttpRequest();
-    req.open("get","./rabbitngsl.csv",true);
-    req.send();
-    req.onload = function () {
-    convertCSVtoArray(req.responseText);
-    }
-}
-
-function convertCSVtoArray(str) {
-    var tmp = str.split("\n");
-    for (var i = 0; i < tmp.length; ++i){
-        result[i] = tmp[i].split(',');
-    }
-    console.log(result[2][1]);
-}
-
-getCSV();
-
-console.log(result);
 
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
